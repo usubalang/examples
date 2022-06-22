@@ -17,7 +17,7 @@
 #     140, 161, 137, 13, 191, 230, 66, 104, 65, 153, 45, 15, 176, 84, 187, 22
 # }
 
-node InBasisChange(b0:u1x1, b1:u1x1, b2:u1x1, b3:u1x1, b4:u1x1, b5:u1x1, b6:u1x1, b7:u1x1)
+node b1(b0:u1x1, b1:u1x1, b2:u1x1, b3:u1x1, b4:u1x1, b5:u1x1, b6:u1x1, b7:u1x1)
      returns (o0:u1x1, o1:u1x1, o2:u1x1, o3:u1x1, o4:u1x1, o5:u1x1, o6:u1x1, o7:u1x1)
 vars
     t0:u1x1,t1:u1x1,t2:u1x1,t3:u1x1,t4:u1x1,t5:u1x1,t6:u1x1,
@@ -28,13 +28,13 @@ let
 	t2 = b0 ^ t0;
 	t3 = t1 ^ b6;
 	t4 = b0 ^ b3;
-    
+
 	t5 = t4 ^ t3;
 	t6 = b7 ^ t4;
 	t7 = t2 ^ b7;
 	t8 = b4 ^ t6;
 	t9 = t2 ^ b4;
-    
+
 	t10 = b1 ^ t8;
 	t11 = t7 ^ t1;
 	t12 = t2 ^ b1;
@@ -53,13 +53,13 @@ let
 	t2 = b4 ^ t0;
 	t3 = b6 ^ b0;
 	t4 = b0 ^ t1;
-    
+
 	t5 = b5 ^ t1;
 	t6 = b5 ^ b2;
 	t7 = b2 ^ b3;
 	t8 = t2 ^ t6;
 	t9 = b3 ^ t6;
-    
+
 	t10 = t3 ^ t9;
 
     (o0, o1, o2, o3, o4, o5, o6, o7) = (t4, t5, t8, t10, t9, t0, t7, t6)
@@ -79,7 +79,7 @@ let
 	t6 = t1 ^ t3;
 
     (o0, o1) = (t6, t5)
-tel    
+tel
 
 node Mul_GF4(i0:u1x1, i1:u1x1, y0:u1x1, y1:u1x1)
      returns (o0:u1x1, o1:u1x1)
@@ -151,7 +151,7 @@ let
 	t2 = x1 ^ x3;
 	t3 = x7 ^ x6;
 	t4 = x0 ^ x2;
-	
+
 	t5 = t0 ^ t1;
 	t6 = t1 & t2;
 	t7 = t2 | t1;
@@ -181,7 +181,7 @@ let
 	t31 = t27 ^ t22;
 	t32 = t28 ^ t25;
 	t33 = t29 ^ t24;
-	
+
 	t34 = t30 ^ t31;
 	t35 = t32 & t30;
 	t36 = t33 ^ t35;
@@ -198,7 +198,7 @@ let
 	t47 = t45 ^ t36;
 	t48 = t38 & t47;
 	t49 = t34 ^ t48;
-	
+
 	(o0,o1,o2,o3,o4,o5,o6,o7) = Mul_GF16_2(x0, x1, x2, x3, x4, x5, x6, x7, t38, t49, t42, t46)
 tel
 

@@ -2,7 +2,7 @@
 # gets generated in the generated code. To test the other functions, you'll
 # have to put them last in the file or comment the rest.
 
-node tes_op (a:b8) returns (b:b8)
+node test_op (a:b8) returns (b:b8)
 vars
 let
     b = a & 12:b8
